@@ -44,7 +44,7 @@ app.delete('/products/:id', async(req,res)=>{
 app.put('/products/:id', async (req, res) => {
     
         const { id } = req.params;
-        const { title, price, desc, image } = req.body; // req.body'den değerleri almak
+        const { title, price, desc, image } = req.body; 
         const product = await productsModel.findByIdAndUpdate(id, { title, price, desc, image })
         res.send('Updated')
         
